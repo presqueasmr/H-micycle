@@ -158,14 +158,14 @@ body{padding-top:60px;font-family:var(--font-body);background:var(--bg-primary);
 .top-nav {
   position: fixed;
   top: 0;
-  left: 0;
+  left: 248px;
   right: 0;
   height: 60px;
   background: var(--bg-inverse-primary);
   border-bottom: 1px solid rgba(255,255,255,0.08);
   display: flex;
   align-items: center;
-  z-index: 101;
+  z-index: 100;
   padding: 0 20px;
 }
 
@@ -203,6 +203,7 @@ body{padding-top:60px;font-family:var(--font-body);background:var(--bg-primary);
 
 @media (max-width: 640px) {
   .top-nav {
+    left: 0;
     padding: 0 12px;
   }
   
@@ -236,6 +237,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 </script>
+
 
 
 <nav class="nav">
@@ -1143,35 +1145,21 @@ body{font-family:var(--font-body);background:var(--bg-primary);color:var(--text-
 .top-nav {
   position: fixed;
   top: 0;
-  left: 0;
+  left: 248px;
   right: 0;
   height: 60px;
   background: var(--bg-inverse-primary);
   border-bottom: 1px solid rgba(255,255,255,0.08);
   display: flex;
   align-items: center;
-  justify-content: center;
-  z-index: 101;
+  z-index: 100;
   padding: 0 20px;
 }
 
 .top-nav-content {
   display: flex;
   align-items: center;
-  gap: 40px;
-  max-width: 100%;
-}
-
-.top-nav-logo {
-  font-family: var(--font-heading);
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--brand-light);
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-right: auto;
+  gap: 2px;
 }
 
 .top-nav-links {
@@ -1202,16 +1190,8 @@ body{font-family:var(--font-body);background:var(--bg-primary);color:var(--text-
 
 @media (max-width: 640px) {
   .top-nav {
+    left: 0;
     padding: 0 12px;
-  }
-  
-  .top-nav-content {
-    gap: 16px;
-  }
-  
-  .top-nav-logo {
-    font-size: 14px;
-    margin-right: 0;
   }
   
   .top-nav-link {
@@ -1223,10 +1203,6 @@ body{font-family:var(--font-body);background:var(--bg-primary);color:var(--text-
 
 <nav class="top-nav">
   <div class="top-nav-content">
-    <a href="index.html" class="top-nav-logo">
-      <span>🏛️</span>
-      <span>Hemi DS</span>
-    </a>
     <div class="top-nav-links">
       <a href="index.html" class="top-nav-link" id="foundations-link">Fondations</a>
       <a href="hemi-ds-components (1).html" class="top-nav-link" id="components-link">Composants</a>
@@ -1248,6 +1224,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 </script>
+
 
 <nav class="nav">
   <div class="nav-logo">

@@ -544,14 +544,14 @@ body {
 .top-nav {
   position: fixed;
   top: 0;
-  left: 0;
+  left: 248px;
   right: 0;
   height: 60px;
   background: var(--bg-inverse-primary);
   border-bottom: 1px solid rgba(255,255,255,0.08);
   display: flex;
   align-items: center;
-  z-index: 101;
+  z-index: 100;
   padding: 0 20px;
 }
 
@@ -589,6 +589,7 @@ body {
 
 @media (max-width: 640px) {
   .top-nav {
+    left: 0;
     padding: 0 12px;
   }
   
@@ -622,6 +623,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 </script>
+
 
 
 <!-- NAV -->
