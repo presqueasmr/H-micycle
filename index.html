@@ -551,7 +551,6 @@ body {
   border-bottom: 1px solid rgba(255,255,255,0.08);
   display: flex;
   align-items: center;
-  justify-content: center;
   z-index: 99;
   padding: 0 20px;
 }
@@ -559,20 +558,7 @@ body {
 .top-nav-content {
   display: flex;
   align-items: center;
-  gap: 40px;
-  max-width: 100%;
-}
-
-.top-nav-logo {
-  font-family: var(--font-heading);
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--brand-light);
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-right: auto;
+  gap: 2px;
 }
 
 .top-nav-links {
@@ -606,15 +592,6 @@ body {
     padding: 0 12px;
   }
   
-  .top-nav-content {
-    gap: 16px;
-  }
-  
-  .top-nav-logo {
-    font-size: 14px;
-    margin-right: 0;
-  }
-  
   .top-nav-link {
     padding: 8px 12px;
     font-size: 12px;
@@ -624,10 +601,6 @@ body {
 
 <nav class="top-nav">
   <div class="top-nav-content">
-    <a href="index.html" class="top-nav-logo">
-      <span>🏛️</span>
-      <span>Hemi DS</span>
-    </a>
     <div class="top-nav-links">
       <a href="index.html" class="top-nav-link" id="foundations-link">Fondations</a>
       <a href="hemi-ds-components (1).html" class="top-nav-link" id="components-link">Composants</a>
@@ -649,6 +622,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 </script>
+
 
 <!-- NAV -->
 <nav class="nav">
