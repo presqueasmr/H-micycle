@@ -777,40 +777,212 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="comp-header-left">
       <div class="comp-eyebrow">Composant primaire</div>
       <div class="comp-title">List Item</div>
-      <p class="comp-desc">Élément de liste générique avec leading/trailing content, titre, sous-titre et séparateurs. Base des vues en liste.</p>
+      <p class="comp-desc">Élément de liste générique avec slots leading/trailing, label, supporting text et séparateur. Hauteur minimum 48px, fond neutre. Base des vues en liste.</p>
     </div>
     <a href="https://www.figma.com/design/pSEt5D1RMWRHbvo1KbrMjc?node-id=215-9581" target="_blank" class="comp-figma-link"><svg width="12" height="12" viewBox="0 0 38 57" fill="none"><path d="M19 28.5C19 25.98 20 23.56 21.78 21.78C23.56 20 25.98 19 28.5 19C31.02 19 33.44 20 35.22 21.78C36.99 23.56 38 25.98 38 28.5C38 31.02 36.99 33.44 35.22 35.22C33.44 36.99 31.02 38 28.5 38C25.98 38 23.56 36.99 21.78 35.22C20 33.44 19 31.02 19 28.5Z" fill="#3d2aff"/><path d="M0 47.5C0 44.98 1 42.56 2.78 40.78C4.56 39 6.98 38 9.5 38H19V47.5C19 50.02 17.99 52.44 16.22 54.22C14.44 55.99 12.02 57 9.5 57C6.98 57 4.56 55.99 2.78 54.22C1 52.44 0 50.02 0 47.5Z" fill="#888bf1"/><path d="M19 0V19H28.5C31.02 19 33.44 17.99 35.22 16.22C36.99 14.44 38 12.02 38 9.5C38 6.98 36.99 4.56 35.22 2.78C33.44 1 31.02 0 28.5 0H19Z" fill="#3d2aff"/><path d="M0 9.5C0 12.02 1 14.44 2.78 16.22C4.56 17.99 6.98 19 9.5 19H19V0H9.5C6.98 0 4.56 1 2.78 2.78C1 4.56 0 6.98 0 9.5Z" fill="#3d2aff"/><path d="M0 28.5C0 31.02 1 33.44 2.78 35.22C4.56 36.99 6.98 38 9.5 38H19V19H9.5C6.98 19 4.56 20 2.78 21.78C1 23.56 0 25.98 0 28.5Z" fill="#3d2aff"/></svg> Voir dans Figma</a>
   </div>
+
+  <!-- ANATOMIE -->
   <div class="subsection">
     <div class="subsection-title">Anatomie</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;">
       <!-- Illustration -->
       <div style="background:var(--bg-surface);border:1px solid var(--border-light);border-radius:var(--radius-md);overflow:hidden;padding:24px;">
-        <!-- Item 1 : titre + supporting text -->
-        <div style="position:relative;background:#f0f1fa;padding:20px 24px 18px;">
-          <div style="font-family:var(--font-body);font-size:18px;font-weight:600;color:#1a1b1e;margin-bottom:4px;">List item</div>
-          <div style="font-family:var(--font-body);font-size:14px;color:#626266;">Supporting text</div>
-          <span style="position:absolute;top:10px;right:10px;width:18px;height:18px;border-radius:50%;background:#111;color:#fff;font-size:10px;font-weight:700;font-family:sans-serif;display:flex;align-items:center;justify-content:center;">1</span>
-          <span style="position:absolute;bottom:10px;right:10px;width:18px;height:18px;border-radius:50%;background:#111;color:#fff;font-size:10px;font-weight:700;font-family:sans-serif;display:flex;align-items:center;justify-content:center;">2</span>
+        <!-- Item 1 : prepend + label + supporting text + append -->
+        <div style="position:relative;display:flex;align-items:center;gap:8px;background:#f0f1fa;border-radius:8px;padding:12px 16px;min-height:48px;margin-bottom:1px;">
+          <!-- Prepend slot -->
+          <div style="width:20px;height:20px;flex-shrink:0;background:#c7caed;border-radius:4px;display:flex;align-items:center;justify-content:center;">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1" y="1" width="10" height="10" rx="2" stroke="#3d2aff" stroke-width="1.2"/></svg>
+          </div>
+          <!-- Content -->
+          <div style="flex:1;min-width:0;">
+            <div style="font-family:var(--font-body);font-size:16px;font-weight:500;color:#242526;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">List item</div>
+            <div style="font-family:var(--font-body);font-size:12px;color:#4c4c4f;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Supporting text</div>
+          </div>
+          <!-- Append slot -->
+          <div style="width:20px;height:20px;flex-shrink:0;display:flex;align-items:center;justify-content:center;">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M4.5 3L7.5 6L4.5 9" stroke="#626266" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <!-- Pins -->
+          <span style="position:absolute;top:-9px;left:8px;width:18px;height:18px;border-radius:50%;background:#111;color:#fff;font-size:10px;font-weight:700;font-family:sans-serif;display:flex;align-items:center;justify-content:center;">1</span>
+          <span style="position:absolute;bottom:-9px;left:26px;width:18px;height:18px;border-radius:50%;background:#111;color:#fff;font-size:10px;font-weight:700;font-family:sans-serif;display:flex;align-items:center;justify-content:center;">2</span>
+          <span style="position:absolute;top:-9px;left:72px;width:18px;height:18px;border-radius:50%;background:#111;color:#fff;font-size:10px;font-weight:700;font-family:sans-serif;display:flex;align-items:center;justify-content:center;">3</span>
+          <span style="position:absolute;bottom:-9px;left:72px;width:18px;height:18px;border-radius:50%;background:#111;color:#fff;font-size:10px;font-weight:700;font-family:sans-serif;display:flex;align-items:center;justify-content:center;">4</span>
+          <span style="position:absolute;top:-9px;right:8px;width:18px;height:18px;border-radius:50%;background:#111;color:#fff;font-size:10px;font-weight:700;font-family:sans-serif;display:flex;align-items:center;justify-content:center;">5</span>
         </div>
-        <!-- Divider -->
-        <div style="height:1px;background:var(--border-light);"></div>
-        <!-- Gap -->
-        <div style="height:24px;background:#fff;"></div>
-        <!-- Divider -->
-        <div style="height:1px;background:var(--border-light);"></div>
-        <!-- Item 2 : titre seul -->
-        <div style="position:relative;background:#f0f1fa;padding:20px 24px 18px;">
-          <div style="font-family:var(--font-body);font-size:18px;font-weight:600;color:#1a1b1e;">List item</div>
-          <span style="position:absolute;top:10px;right:10px;width:18px;height:18px;border-radius:50%;background:#111;color:#fff;font-size:10px;font-weight:700;font-family:sans-serif;display:flex;align-items:center;justify-content:center;">3</span>
+        <!-- Divider visible -->
+        <div style="height:1px;background:#dedfe7;position:relative;">
+          <span style="position:absolute;right:8px;top:-9px;width:18px;height:18px;border-radius:50%;background:#111;color:#fff;font-size:10px;font-weight:700;font-family:sans-serif;display:flex;align-items:center;justify-content:center;">6</span>
+        </div>
+        <!-- Item 2 : 1 ligne seul -->
+        <div style="display:flex;align-items:center;gap:8px;background:#f0f1fa;border-radius:8px;padding:12px 16px;min-height:48px;margin-top:1px;">
+          <div style="flex:1;min-width:0;">
+            <div style="font-family:var(--font-body);font-size:16px;font-weight:500;color:#242526;">List item</div>
+          </div>
         </div>
       </div>
       <!-- Anatomy list -->
       <div class="anatomy-list">
-        <div class="anatomy-item"><div class="anatomy-num">1</div><div><div class="anatomy-name">Label</div><div class="anatomy-desc">Titre principal de l'élément. DM Sans SemiBold 16–18px. Toujours présent.</div></div></div>
-        <div class="anatomy-item"><div class="anatomy-num">2</div><div><div class="anatomy-name">Supporting text (optionnel)</div><div class="anatomy-desc">Sous-titre ou description courte. DM Sans Regular 14px, couleur secondaire.</div></div></div>
-        <div class="anatomy-item"><div class="anatomy-num">3</div><div><div class="anatomy-name">Item sans supporting text</div><div class="anatomy-desc">Variante sans sous-titre — hauteur réduite, label seul centré verticalement.</div></div></div>
+        <div class="anatomy-item"><div class="anatomy-num">1</div><div><div class="anatomy-name">Container</div><div class="anatomy-desc">Fond `#f0f1fa`, border-radius 8px, min-height 48px. Étire en largeur pour occuper son parent.</div></div></div>
+        <div class="anatomy-item"><div class="anatomy-num">2</div><div><div class="anatomy-name">Prepend (optionnel)</div><div class="anatomy-desc">Slot 20×20px à gauche — icône, avatar ou image. Activé via la prop <em>prepend</em>.</div></div></div>
+        <div class="anatomy-item"><div class="anatomy-num">3</div><div><div class="anatomy-name">Label</div><div class="anatomy-desc">DM Sans Medium 16px, couleur `#242526`. Toujours présent. Tronqué à 1 ligne par défaut.</div></div></div>
+        <div class="anatomy-item"><div class="anatomy-num">4</div><div><div class="anatomy-name">Supporting text (optionnel)</div><div class="anatomy-desc">DM Sans Regular 12px, couleur `#4c4c4f`. Complément court sous le label.</div></div></div>
+        <div class="anatomy-item"><div class="anatomy-num">5</div><div><div class="anatomy-name">Append (optionnel)</div><div class="anatomy-desc">Slot 20×20px à droite — chevron, switch ou icône d'action.</div></div></div>
+        <div class="anatomy-item"><div class="anatomy-num">6</div><div><div class="anatomy-name">Divider (optionnel)</div><div class="anatomy-desc">Ligne 1px couleur `#dedfe7` en bas du container. Sépare les items dans une liste.</div></div></div>
       </div>
+    </div>
+  </div>
+
+  <!-- PROPRIÉTÉS -->
+  <div class="subsection">
+    <div class="subsection-title">Propriétés</div>
+    <div class="props-grid">
+
+      <!-- Lines -->
+      <div class="prop-card">
+        <div style="background:#fff;border:1px solid var(--border-light);border-radius:var(--radius-sm);padding:12px 16px;margin-bottom:10px;display:flex;flex-direction:column;gap:2px;">
+          <!-- 2 lines -->
+          <div style="display:flex;align-items:center;gap:8px;background:#f0f1fa;border-radius:6px;padding:10px 12px;min-height:44px;">
+            <div style="flex:1;">
+              <div style="font-family:var(--font-body);font-size:14px;font-weight:500;color:#242526;">List item</div>
+              <div style="font-family:var(--font-body);font-size:11px;color:#4c4c4f;">Supporting text</div>
+            </div>
+          </div>
+          <div style="height:1px;background:#dedfe7;"></div>
+          <!-- 1 line -->
+          <div style="display:flex;align-items:center;background:#f0f1fa;border-radius:6px;padding:10px 12px;min-height:44px;">
+            <div style="font-family:var(--font-body);font-size:14px;font-weight:500;color:#242526;">List item</div>
+          </div>
+        </div>
+        <div class="prop-name">Lines</div>
+        <div class="prop-type">Enum</div>
+        <div class="prop-values"><span class="prop-val default">2 lines</span><span class="prop-val">1 line</span></div>
+      </div>
+
+      <!-- Prepend -->
+      <div class="prop-card">
+        <div style="background:#fff;border:1px solid var(--border-light);border-radius:var(--radius-sm);padding:12px 16px;margin-bottom:10px;display:flex;flex-direction:column;gap:2px;">
+          <!-- with prepend -->
+          <div style="display:flex;align-items:center;gap:8px;background:#f0f1fa;border-radius:6px;padding:10px 12px;min-height:44px;">
+            <div style="width:18px;height:18px;flex-shrink:0;background:#c7caed;border-radius:4px;"></div>
+            <div style="font-family:var(--font-body);font-size:14px;font-weight:500;color:#242526;">List item</div>
+          </div>
+          <div style="height:1px;background:#dedfe7;"></div>
+          <!-- without prepend -->
+          <div style="display:flex;align-items:center;background:#f0f1fa;border-radius:6px;padding:10px 12px;min-height:44px;">
+            <div style="font-family:var(--font-body);font-size:14px;font-weight:500;color:#242526;">List item</div>
+          </div>
+        </div>
+        <div class="prop-name">Prepend</div>
+        <div class="prop-type">Boolean + slot</div>
+        <div class="prop-values"><span class="prop-val default">False</span><span class="prop-val">True</span></div>
+      </div>
+
+      <!-- Append -->
+      <div class="prop-card">
+        <div style="background:#fff;border:1px solid var(--border-light);border-radius:var(--radius-sm);padding:12px 16px;margin-bottom:10px;display:flex;flex-direction:column;gap:2px;">
+          <!-- with append -->
+          <div style="display:flex;align-items:center;gap:8px;background:#f0f1fa;border-radius:6px;padding:10px 12px;min-height:44px;">
+            <div style="flex:1;font-family:var(--font-body);font-size:14px;font-weight:500;color:#242526;">List item</div>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3.5L8.5 7L5 10.5" stroke="#626266" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div style="height:1px;background:#dedfe7;"></div>
+          <!-- without append -->
+          <div style="display:flex;align-items:center;background:#f0f1fa;border-radius:6px;padding:10px 12px;min-height:44px;">
+            <div style="font-family:var(--font-body);font-size:14px;font-weight:500;color:#242526;">List item</div>
+          </div>
+        </div>
+        <div class="prop-name">Append</div>
+        <div class="prop-type">Boolean + slot</div>
+        <div class="prop-values"><span class="prop-val default">False</span><span class="prop-val">True</span></div>
+      </div>
+
+      <!-- Divider -->
+      <div class="prop-card">
+        <div style="background:#fff;border:1px solid var(--border-light);border-radius:var(--radius-sm);padding:12px 16px;margin-bottom:10px;display:flex;flex-direction:column;gap:2px;">
+          <!-- with divider -->
+          <div style="background:#f0f1fa;border-radius:6px;padding:10px 12px;min-height:44px;position:relative;">
+            <div style="font-family:var(--font-body);font-size:14px;font-weight:500;color:#242526;">List item</div>
+            <div style="position:absolute;bottom:0;left:0;right:0;height:1px;background:#dedfe7;"></div>
+          </div>
+          <!-- without divider -->
+          <div style="background:#f0f1fa;border-radius:6px;padding:10px 12px;min-height:44px;margin-top:8px;">
+            <div style="font-family:var(--font-body);font-size:14px;font-weight:500;color:#242526;">List item</div>
+          </div>
+        </div>
+        <div class="prop-name">Divider</div>
+        <div class="prop-type">Boolean</div>
+        <div class="prop-values"><span class="prop-val default">False</span><span class="prop-val">True</span></div>
+      </div>
+
+      <div class="prop-card"><div class="prop-name">Label</div><div class="prop-type">String</div><div class="prop-values"><span class="prop-val default">List item</span></div></div>
+      <div class="prop-card"><div class="prop-name">Supporting text</div><div class="prop-type">String</div><div class="prop-values"><span class="prop-val default">Supporting text</span></div></div>
+    </div>
+  </div>
+
+  <!-- INTERACTIONS -->
+  <div class="subsection">
+    <div class="subsection-title">Interactions</div>
+    <div class="interactions-list">
+      <div class="interaction-row"><div class="interaction-trigger">Tap / Click</div><div class="interaction-desc">Par défaut, chaque List Item est tappable. Le state layer (overlay) se superpose sur press pour confirmer l'action.</div></div>
+      <div class="interaction-row"><div class="interaction-trigger">Hovered</div><div class="interaction-desc">Overlay dark-10 `rgba(31,31,31,0.1)` sur tout le container. Curseur pointer.</div></div>
+      <div class="interaction-row"><div class="interaction-trigger">Focused</div><div class="interaction-trigger">Overlay dark-10 + outline 2px brand. Accessible clavier.</div></div>
+      <div class="interaction-row"><div class="interaction-trigger">Pressed</div><div class="interaction-desc">State layer pressed avec effet d'élévation réduite. Feedback visuel immédiat.</div></div>
+      <div class="interaction-row"><div class="interaction-trigger">Dragged</div><div class="interaction-desc">Élévation 8px + drop-shadow. Utilisé pour le drag-and-drop de tri dans une liste.</div></div>
+    </div>
+  </div>
+
+  <!-- STRUCTURE & ESPACEMENTS -->
+  <div class="subsection">
+    <div class="subsection-title">Structure & Espacements</div>
+    <div class="layout-spec-grid">
+      <div class="layout-spec-card">
+        <div class="layout-spec-label">Container</div>
+        <div class="layout-spec-row"><span class="layout-spec-key">Min height</span><span class="layout-spec-val">48px</span></div>
+        <div class="layout-spec-row"><span class="layout-spec-key">Padding H</span><span class="layout-spec-val">16px</span></div>
+        <div class="layout-spec-row"><span class="layout-spec-key">Padding V</span><span class="layout-spec-val">12px</span></div>
+        <div class="layout-spec-row"><span class="layout-spec-key">Gap</span><span class="layout-spec-val">8px</span></div>
+      </div>
+      <div class="layout-spec-card">
+        <div class="layout-spec-label">Typographie</div>
+        <div class="layout-spec-row"><span class="layout-spec-key">Label</span><span class="layout-spec-val">DM Sans Medium 16px</span></div>
+        <div class="layout-spec-row"><span class="layout-spec-key">Supporting</span><span class="layout-spec-val">DM Sans Regular 12px</span></div>
+        <div class="layout-spec-row"><span class="layout-spec-key">Slot icon</span><span class="layout-spec-val">20×20px</span></div>
+        <div class="layout-spec-row"><span class="layout-spec-key">Divider</span><span class="layout-spec-val">1px #dedfe7</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DO / DON'T -->
+  <div class="subsection">
+    <div class="subsection-title">Bonnes &amp; mauvaises pratiques</div>
+    <div class="dodont-grid">
+      <div class="dodont-card dodont-do"><div class="dodont-header">✓ Do</div><div class="dodont-body">Utiliser le Divider uniquement entre les items d'une même liste, pas après le dernier élément. Limiter le label à une ligne — tronquer avec ellipsis si nécessaire.</div></div>
+      <div class="dodont-card dodont-dont"><div class="dodont-header">✗ Don't</div><div class="dodont-body">Ne pas surcharger l'item avec plus d'un slot prepend et d'un slot append simultanément. Ne pas utiliser le List Item hors contexte de liste — préférer un composant Card pour des entités isolées.</div></div>
+    </div>
+  </div>
+
+  <!-- ACCESSIBILITÉ -->
+  <div class="subsection">
+    <div class="subsection-title">Accessibilité</div>
+    <div class="a11y-list">
+      <div class="a11y-item"><div class="a11y-icon">◈</div><div class="a11y-text"><strong>Zone de tap ≥ 48px.</strong> Le min-height garantit une cible tactile suffisante sans configuration supplémentaire.</div></div>
+      <div class="a11y-item"><div class="a11y-icon">◈</div><div class="a11y-text"><strong>Focus clavier visible.</strong> L'outline brand doit rester visible — ne pas supprimer l'outline focus.</div></div>
+      <div class="a11y-item"><div class="a11y-icon">◈</div><div class="a11y-text"><strong>Icônes décoratives.</strong> Les slots prepend/append purement décoratifs doivent avoir `aria-hidden="true"`. Si porteurs de sens, fournir un `aria-label`.</div></div>
+      <div class="a11y-item"><div class="a11y-icon">◈</div><div class="a11y-text"><strong>Contraste supporting text ≥ 4,5:1.</strong> La couleur `#4c4c4f` sur fond `#f0f1fa` respecte ce ratio.</div></div>
+    </div>
+  </div>
+
+  <!-- CHECKLIST -->
+  <div class="subsection">
+    <div class="subsection-title">Checklist — Critères d'acceptance</div>
+    <div class="checklist">
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Label tronqué à 1 ligne avec ellipsis <span class="check-cat cat-anatomy">Anatomie</span></div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Min-height 48px respecté en toutes variantes <span class="check-cat cat-a11y">A11y</span></div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">State layer présent sur les items interactifs <span class="check-cat cat-anatomy">Anatomie</span></div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Divider absent sur le dernier item de la liste <span class="check-cat cat-content">Contenu</span></div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Icônes décoratives masquées aux lecteurs d'écran <span class="check-cat cat-a11y">A11y</span></div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Focus visible au clavier <span class="check-cat cat-a11y">A11y</span></div></div>
     </div>
   </div>
 </section>
