@@ -560,7 +560,14 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="subsection-title">Propriétés</div>
     <div class="props-grid">
       <div class="prop-card"><div class="prop-name">Density</div><div class="prop-type">Enum</div><div class="prop-values"><span class="prop-val default">Comfortable</span><span class="prop-val">Compact</span></div></div>
-      <div class="prop-card"><div class="prop-name">Types</div><div class="prop-type">Enum</div><div class="prop-values"><span class="prop-val default">Filled</span><span class="prop-val">Outlined</span></div></div>
+      <div class="prop-card">
+        <div style="background:var(--bg-primary);border:1px solid var(--border-light);border-radius:var(--radius-sm);padding:16px 20px;margin-bottom:10px;display:flex;flex-direction:column;align-items:flex-start;gap:12px;">
+          <span style="display:inline-flex;align-items:center;justify-content:center;background:#1D1FB6;color:#fff;border-radius:1000px;padding:13px 20px;font-family:var(--font-body);font-size:14px;font-weight:500;">Fill</span>
+          <span style="display:inline-flex;align-items:center;justify-content:center;background:#c5c9f4;color:#3d2aff;border-radius:14px;padding:13px 36px;font-family:var(--font-body);font-size:14px;font-weight:500;">Light</span>
+          <span style="display:inline-flex;align-items:center;justify-content:center;background:#dcdff8;color:#8a8ef0;border-radius:18px;padding:13px 52px;font-family:var(--font-body);font-size:14px;font-weight:500;">On-dark</span>
+        </div>
+        <div class="prop-name">Types</div><div class="prop-type">Enum</div><div class="prop-values"><span class="prop-val default">Filled</span><span class="prop-val">Outlined</span></div>
+      </div>
       <div class="prop-card"><div class="prop-name">Styles</div><div class="prop-type">Enum · sémantique</div><div class="prop-values"><span class="prop-val default">Brand</span><span class="prop-val">Success</span><span class="prop-val">Error</span><span class="prop-val">Warning</span><span class="prop-val">Neutral</span></div></div>
       <div class="prop-card"><div class="prop-name">Leading</div><div class="prop-type">Boolean + slot</div><div class="prop-values"><span class="prop-val default">None</span><span class="prop-val">Dot</span><span class="prop-val">Icon</span></div></div>
       <div class="prop-card"><div class="prop-name">State</div><div class="prop-type">Enum</div><div class="prop-values"><span class="prop-val default">Default</span><span class="prop-val">Selected</span><span class="prop-val">Disabled</span></div></div>
