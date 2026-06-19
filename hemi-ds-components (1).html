@@ -642,13 +642,69 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>
   <div class="subsection">
     <div class="subsection-title">Anatomie</div>
-    <div class="anatomy-list">
-      <div class="anatomy-item"><div class="anatomy-num">1</div><div><div class="anatomy-name">Image de couverture (optionnel)</div><div class="anatomy-desc">Photo ou illustration représentative. Aspect-ratio fixe 16:9. Si absente, l'overline occupe sa place.</div></div></div>
-      <div class="anatomy-item"><div class="anatomy-num">2</div><div><div class="anatomy-name">Overline / Tags</div><div class="anatomy-desc">Tags de thématique (ex. "Santé", "Éducation") et statut de la loi. Utilisent le composant Tag.</div></div></div>
-      <div class="anatomy-item"><div class="anatomy-num">3</div><div><div class="anatomy-name">Titre</div><div class="anatomy-desc">Heading H3 (Boldonse 18px, line-height 1.8). Nom officiel. Maximum 2 lignes avant truncation.</div></div></div>
-      <div class="anatomy-item"><div class="anatomy-num">4</div><div><div class="anatomy-name">Description (optionnel)</div><div class="anatomy-desc">Body Small Regular 14px. Résumé en 2-3 lignes. Absent en variante Compact.</div></div></div>
-      <div class="anatomy-item"><div class="anatomy-num">5</div><div><div class="anatomy-name">Avatar + rapporteur</div><div class="anatomy-desc">Composant Avatar SM + Body Small. Identifie le député ou sénateur porteur.</div></div></div>
-      <div class="anatomy-item"><div class="anatomy-num">6</div><div><div class="anatomy-name">Barre de progression (optionnel)</div><div class="anatomy-desc">Avancement dans le parcours législatif (0–100%). Couleur brand ou sémantique selon l'état.</div></div></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;">
+      <!-- Law Card CSS illustration -->
+      <div style="border-radius:20px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.13);background:#f5f6fb;position:relative;max-width:320px;">
+        <!-- 1 Cover image -->
+        <div style="position:relative;aspect-ratio:16/9;background:linear-gradient(160deg,#4a7c3f 0%,#6b9e55 35%,#7aad60 60%,#4e8040 100%);overflow:hidden;">
+          <!-- subtle field texture rows -->
+          <div style="position:absolute;bottom:0;left:0;right:0;height:40%;background:linear-gradient(180deg,transparent,rgba(0,0,0,0.18));"></div>
+          <!-- 2 Overline / Tag -->
+          <span style="position:absolute;bottom:12px;left:12px;display:inline-flex;align-items:center;gap:6px;background:rgba(255,237,220,0.96);color:#c05800;padding:5px 12px;border-radius:100px;font-family:var(--font-body);font-size:12px;font-weight:500;">
+            <span style="width:7px;height:7px;border-radius:50%;background:#e06000;flex-shrink:0;"></span>En débat
+          </span>
+          <span style="position:absolute;top:8px;right:8px;width:18px;height:18px;border-radius:50%;background:#111;color:#fff;font-size:10px;font-weight:700;font-family:sans-serif;display:flex;align-items:center;justify-content:center;">1</span>
+          <span style="position:absolute;bottom:0px;left:82px;width:18px;height:18px;border-radius:50%;background:#111;color:#fff;font-size:10px;font-weight:700;font-family:sans-serif;display:flex;align-items:center;justify-content:center;">2</span>
+        </div>
+        <!-- Card body -->
+        <div style="background:#f5f6fb;padding:16px 16px 0;">
+          <!-- 3 Titre -->
+          <div style="position:relative;margin-bottom:8px;">
+            <div style="font-family:var(--font-heading);font-size:17px;font-weight:700;color:#242526;line-height:1.35;">Loi Duplomb-Menonville</div>
+            <span style="position:absolute;top:-6px;right:0;width:18px;height:18px;border-radius:50%;background:#111;color:#fff;font-size:10px;font-weight:700;font-family:sans-serif;display:flex;align-items:center;justify-content:center;">3</span>
+          </div>
+          <!-- 4 Description -->
+          <div style="position:relative;margin-bottom:12px;">
+            <div style="font-family:var(--font-body);font-size:13px;color:#626266;line-height:1.5;">Proposition de loi visant à lever les contraintes à l'agro-industrie.</div>
+            <span style="position:absolute;top:-6px;right:0;width:18px;height:18px;border-radius:50%;background:#111;color:#fff;font-size:10px;font-weight:700;font-family:sans-serif;display:flex;align-items:center;justify-content:center;">4</span>
+          </div>
+          <!-- Topic chips -->
+          <div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;">
+            <span style="display:inline-flex;align-items:center;gap:5px;background:#fff;border:1px solid #e0e2f0;padding:5px 12px;border-radius:100px;font-family:var(--font-body);font-size:12px;color:#242526;">🌾 Agriculture</span>
+            <span style="display:inline-flex;align-items:center;gap:5px;background:#fff;border:1px solid #e0e2f0;padding:5px 12px;border-radius:100px;font-family:var(--font-body);font-size:12px;color:#242526;">🌳 Écologie</span>
+          </div>
+          <!-- Divider -->
+          <div style="border-top:1px solid #e0e2f0;margin:0 -16px;"></div>
+          <!-- 5 Avatar + rapporteur -->
+          <div style="position:relative;display:flex;align-items:center;justify-content:space-between;padding:12px 0;">
+            <div style="display:flex;align-items:center;gap:10px;">
+              <div style="width:34px;height:34px;border-radius:50%;background:#e8eaf8;display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:11px;font-weight:700;color:#3d2aff;border:1px solid #d0d3f0;">IR</div>
+              <div>
+                <div style="font-family:var(--font-body);font-size:13px;font-weight:600;color:#242526;">Gouvernement</div>
+                <div style="font-family:var(--font-body);font-size:11px;color:#626266;">Renaissance · Sept. 2024</div>
+              </div>
+            </div>
+            <div style="width:34px;height:34px;border-radius:50%;background:#e8eaf8;display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:11px;font-weight:700;color:#3d2aff;border:1px solid #d0d3f0;">IR</div>
+            <span style="position:absolute;top:-6px;right:0;width:18px;height:18px;border-radius:50%;background:#111;color:#fff;font-size:10px;font-weight:700;font-family:sans-serif;display:flex;align-items:center;justify-content:center;">5</span>
+          </div>
+          <!-- 6 Progress bar -->
+          <div style="position:relative;padding-bottom:16px;">
+            <div style="height:4px;background:#e0e2f0;border-radius:2px;overflow:hidden;">
+              <div style="width:45%;height:100%;background:#3d2aff;border-radius:2px;"></div>
+            </div>
+            <span style="position:absolute;top:-10px;right:0;width:18px;height:18px;border-radius:50%;background:#111;color:#fff;font-size:10px;font-weight:700;font-family:sans-serif;display:flex;align-items:center;justify-content:center;">6</span>
+          </div>
+        </div>
+      </div>
+      <!-- Anatomy list -->
+      <div class="anatomy-list">
+        <div class="anatomy-item"><div class="anatomy-num">1</div><div><div class="anatomy-name">Image de couverture (optionnel)</div><div class="anatomy-desc">Photo ou illustration représentative. Aspect-ratio fixe 16:9. Si absente, l'overline occupe sa place.</div></div></div>
+        <div class="anatomy-item"><div class="anatomy-num">2</div><div><div class="anatomy-name">Overline / Tags</div><div class="anatomy-desc">Tags de thématique (ex. "Santé", "Éducation") et statut de la loi. Utilisent le composant Tag.</div></div></div>
+        <div class="anatomy-item"><div class="anatomy-num">3</div><div><div class="anatomy-name">Titre</div><div class="anatomy-desc">Heading H3 (Boldonse 18px, line-height 1.8). Nom officiel. Maximum 2 lignes avant truncation.</div></div></div>
+        <div class="anatomy-item"><div class="anatomy-num">4</div><div><div class="anatomy-name">Description (optionnel)</div><div class="anatomy-desc">Body Small Regular 14px. Résumé en 2-3 lignes. Absent en variante Compact.</div></div></div>
+        <div class="anatomy-item"><div class="anatomy-num">5</div><div><div class="anatomy-name">Avatar + rapporteur</div><div class="anatomy-desc">Composant Avatar SM + Body Small. Identifie le député ou sénateur porteur.</div></div></div>
+        <div class="anatomy-item"><div class="anatomy-num">6</div><div><div class="anatomy-name">Barre de progression (optionnel)</div><div class="anatomy-desc">Avancement dans le parcours législatif (0–100%). Couleur brand ou sémantique selon l'état.</div></div></div>
+      </div>
     </div>
   </div>
   <div class="subsection">
