@@ -255,7 +255,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <a href="#button" class="nav-link active"><span class="nav-dot"></span>Button</a>
     <a href="#tag" class="nav-link"><span class="nav-dot"></span>Tag</a>
     <a href="#chip" class="nav-link"><span class="nav-dot"></span>Chip</a>
-    <a href="#list" class="nav-link"><span class="nav-dot"></span>List</a>
+    <a href="#list" class="nav-link"><span class="nav-dot"></span>List Item</a>
     <a href="#tab" class="nav-link"><span class="nav-dot"></span>Tab</a>
     <a href="#bottom-nav" class="nav-link"><span class="nav-dot"></span>Bottom nav bar</a>
     <a href="#avatar" class="nav-link"><span class="nav-dot"></span>Avatar</a>
@@ -776,14 +776,42 @@ document.addEventListener('DOMContentLoaded', function() {
   <div class="comp-header">
     <div class="comp-header-left">
       <div class="comp-eyebrow">Composant primaire</div>
-      <div class="comp-title">List</div>
+      <div class="comp-title">List Item</div>
       <p class="comp-desc">Élément de liste générique avec leading/trailing content, titre, sous-titre et séparateurs. Base des vues en liste.</p>
     </div>
     <a href="https://www.figma.com/design/pSEt5D1RMWRHbvo1KbrMjc?node-id=215-9581" target="_blank" class="comp-figma-link"><svg width="12" height="12" viewBox="0 0 38 57" fill="none"><path d="M19 28.5C19 25.98 20 23.56 21.78 21.78C23.56 20 25.98 19 28.5 19C31.02 19 33.44 20 35.22 21.78C36.99 23.56 38 25.98 38 28.5C38 31.02 36.99 33.44 35.22 35.22C33.44 36.99 31.02 38 28.5 38C25.98 38 23.56 36.99 21.78 35.22C20 33.44 19 31.02 19 28.5Z" fill="#3d2aff"/><path d="M0 47.5C0 44.98 1 42.56 2.78 40.78C4.56 39 6.98 38 9.5 38H19V47.5C19 50.02 17.99 52.44 16.22 54.22C14.44 55.99 12.02 57 9.5 57C6.98 57 4.56 55.99 2.78 54.22C1 52.44 0 50.02 0 47.5Z" fill="#888bf1"/><path d="M19 0V19H28.5C31.02 19 33.44 17.99 35.22 16.22C36.99 14.44 38 12.02 38 9.5C38 6.98 36.99 4.56 35.22 2.78C33.44 1 31.02 0 28.5 0H19Z" fill="#3d2aff"/><path d="M0 9.5C0 12.02 1 14.44 2.78 16.22C4.56 17.99 6.98 19 9.5 19H19V0H9.5C6.98 0 4.56 1 2.78 2.78C1 4.56 0 6.98 0 9.5Z" fill="#3d2aff"/><path d="M0 28.5C0 31.02 1 33.44 2.78 35.22C4.56 36.99 6.98 38 9.5 38H19V19H9.5C6.98 19 4.56 20 2.78 21.78C1 23.56 0 25.98 0 28.5Z" fill="#3d2aff"/></svg> Voir dans Figma</a>
   </div>
-  <div style="background:var(--brand-bg);border-radius:var(--radius-md);padding:24px;text-align:center;">
-    <div style="font-family:var(--font-heading);font-size:14px;color:var(--brand-dark);margin-bottom:8px;">Documentation à compléter</div>
-    <p style="font-size:13px;color:var(--brand);font-family:var(--font-body);">Ouvrir le fichier Figma pour accéder aux specs de ce composant.</p>
+  <div class="subsection">
+    <div class="subsection-title">Anatomie</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;">
+      <!-- Illustration -->
+      <div style="background:var(--bg-surface);border:1px solid var(--border-light);border-radius:var(--radius-md);overflow:hidden;">
+        <!-- Item 1 : titre + supporting text -->
+        <div style="position:relative;background:#f0f1fa;padding:20px 24px 18px;">
+          <div style="font-family:var(--font-body);font-size:18px;font-weight:600;color:#1a1b1e;margin-bottom:4px;">List item</div>
+          <div style="font-family:var(--font-body);font-size:14px;color:#626266;">Supporting text</div>
+          <span style="position:absolute;top:10px;right:10px;width:18px;height:18px;border-radius:50%;background:#111;color:#fff;font-size:10px;font-weight:700;font-family:sans-serif;display:flex;align-items:center;justify-content:center;">1</span>
+          <span style="position:absolute;bottom:10px;right:10px;width:18px;height:18px;border-radius:50%;background:#111;color:#fff;font-size:10px;font-weight:700;font-family:sans-serif;display:flex;align-items:center;justify-content:center;">2</span>
+        </div>
+        <!-- Divider -->
+        <div style="height:1px;background:var(--border-light);"></div>
+        <!-- Gap -->
+        <div style="height:24px;background:#fff;"></div>
+        <!-- Divider -->
+        <div style="height:1px;background:var(--border-light);"></div>
+        <!-- Item 2 : titre seul -->
+        <div style="position:relative;background:#f0f1fa;padding:20px 24px 18px;">
+          <div style="font-family:var(--font-body);font-size:18px;font-weight:600;color:#1a1b1e;">List item</div>
+          <span style="position:absolute;top:10px;right:10px;width:18px;height:18px;border-radius:50%;background:#111;color:#fff;font-size:10px;font-weight:700;font-family:sans-serif;display:flex;align-items:center;justify-content:center;">3</span>
+        </div>
+      </div>
+      <!-- Anatomy list -->
+      <div class="anatomy-list">
+        <div class="anatomy-item"><div class="anatomy-num">1</div><div><div class="anatomy-name">Label</div><div class="anatomy-desc">Titre principal de l'élément. DM Sans SemiBold 16–18px. Toujours présent.</div></div></div>
+        <div class="anatomy-item"><div class="anatomy-num">2</div><div><div class="anatomy-name">Supporting text (optionnel)</div><div class="anatomy-desc">Sous-titre ou description courte. DM Sans Regular 14px, couleur secondaire.</div></div></div>
+        <div class="anatomy-item"><div class="anatomy-num">3</div><div><div class="anatomy-name">Item sans supporting text</div><div class="anatomy-desc">Variante sans sous-titre — hauteur réduite, label seul centré verticalement.</div></div></div>
+      </div>
+    </div>
   </div>
 </section>
 <section class="comp-section" id="tab">
