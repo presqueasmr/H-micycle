@@ -36,7 +36,8 @@
 html{scroll-behavior:smooth;}
 body{padding-top:60px;font-family:var(--font-body);background:var(--bg-primary);color:var(--text-default);line-height:1.6;}
 
-.nav{position:fixed;top:0;left:0;width:248px;height:100vh;background:var(--bg-inverse);display:flex;flex-direction:column;z-index:100;overflow-y:auto;padding:0 0 24px;}
+.nav{position:fixed;top:0;left:0;width:248px;height:100vh;background:var(--bg-inverse);display:flex;flex-direction:column;z-index:100;overflow-y:auto;padding:0 0 24px;scrollbar-width:none;}
+.nav::-webkit-scrollbar{display:none;}
 .nav-logo{padding:24px 20px 20px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:8px;}
 .nav-logo .wordmark{font-family:var(--font-heading);font-size:20px;color:var(--brand-light);}
 .nav-logo .version{font-size:11px;color:rgba(255,255,255,.3);margin-top:4px;}
