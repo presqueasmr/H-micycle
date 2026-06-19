@@ -18,7 +18,7 @@
 
 :root {
   --brand:#3d2aff; --brand-light:#99a3f5; --brand-dark:#241d86; --brand-bg:#e2e6fd;
-  --bg-primary:#f0f1fa; --bg-secondary:#ffffff; --bg-inverse:#242526;
+  --bg-primary:#f0f1fa; --bg-secondary:#ffffff; --bg-inverse:#242526; --bg-inverse-primary:#242526;
   --text-default:#242526; --text-secondary:#626266; --text-disabled:#a9aab0;
   --border:#c4c5cc; --border-light:#dedfe7;
   --success:#1c9d4e; --success-bg:#ddfbe7;
@@ -36,7 +36,7 @@
 html{scroll-behavior:smooth;}
 body{padding-top:60px;font-family:var(--font-body);background:var(--bg-primary);color:var(--text-default);line-height:1.6;}
 
-.nav{position:fixed;top:0;left:0;width:248px;height:100vh;background:var(--bg-inverse-primary);display:flex;flex-direction:column;z-index:100;overflow-y:auto;padding:0 0 24px;}
+.nav{position:fixed;top:0;left:0;width:248px;height:100vh;background:var(--bg-inverse);display:flex;flex-direction:column;z-index:100;overflow-y:auto;padding:0 0 24px;}
 .nav-logo{padding:24px 20px 20px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:8px;}
 .nav-logo .wordmark{font-family:var(--font-heading);font-size:20px;color:var(--brand-light);}
 .nav-logo .version{font-size:11px;color:rgba(255,255,255,.3);margin-top:4px;}
